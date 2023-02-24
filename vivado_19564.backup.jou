@@ -1,0 +1,99 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Tue Feb 21 13:13:47 2023
+# Process ID: 19564
+# Current directory: C:/Users/86173/Documents/code/vivado/Exp6
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17616 C:\Users\86173\Documents\code\vivado\Exp6\Exp6.xpr
+# Log file: C:/Users/86173/Documents/code/vivado/Exp6/vivado.log
+# Journal file: C:/Users/86173/Documents/code/vivado/Exp6\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/86173/Documents/code/vivado/Exp6/Exp6.xpr
+update_compile_order -fileset sources_1
+reset_run divider_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core}} 
+restart
+run all
+close_sim
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/clock/debug_clk}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/rst}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/PC_IF}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/inst_IF}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/PC_IS}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/inst_IS}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/rs1_addr_ctrl}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/rs2_addr_ctrl}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/rs1_data_RO}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/rs2_data_RO}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/FU_mem_EN}} 
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/RegWrite_ctrl}} 
+restart
+run 10 us
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/ctrl}} 
+close_sim
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/ctrl}} 
+relaunch_sim
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/ctrl}} 
+relaunch_sim
+close_sim
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+launch_simulation
+open_wave_config C:/Users/86173/Documents/code/vivado/Exp6/code/sim/sim_top_behav.wcfg
+source sim_top.tcl
+current_wave_config {sim_top_behav.wcfg}
+add_wave {{/sim_top/core/ctrl}} 
+relaunch_sim
+close_sim
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
