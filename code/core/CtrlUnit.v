@@ -170,7 +170,7 @@ module CtrlUnit(
         dst == FUS[`FU_MUL][`DST_H:`DST_L] |
         dst == FUS[`FU_DIV][`DST_H:`DST_L]
     );
-    assign normal_stall = WAW | structural_hazard;           //fill sth. here
+    assign normal_stall = (WAW | structural_hazard) ;           //fill sth. here
 
     assign IS_en = IS_flush | ~normal_stall & ~ctrl_stall;
     assign RO_en = ~IS_flush & ~normal_stall & ~ctrl_stall;
@@ -449,7 +449,7 @@ module CtrlUnit(
             end
             // ALU
             //fill sth. here
-            else if(FUS[`FU_ALU][`FU_DONE] & ALU_WAR) begin
+            if(FUS[`FU_ALU][`FU_DONE] & ALU_WAR) begin
                 FUS[`FU_ALU] <= 32'b0;
                 RRS[FUS[`FU_ALU][`DST_H:`DST_L]] <= 3'b0;
 
@@ -489,7 +489,7 @@ module CtrlUnit(
             end
             // MEM
             //fill sth. here
-            else if(FUS[`FU_MEM][`FU_DONE] & MEM_WAR) begin
+            if(FUS[`FU_MEM][`FU_DONE] & MEM_WAR) begin
                 FUS[`FU_MEM] <= 32'b0;
                 RRS[FUS[`FU_MEM][`DST_H:`DST_L]] <= 3'b0;
 
@@ -529,7 +529,7 @@ module CtrlUnit(
             end
             // MUL
             //fill sth. here
-            else if(FUS[`FU_MUL][`FU_DONE] & MUL_WAR) begin
+            if(FUS[`FU_MUL][`FU_DONE] & MUL_WAR) begin
                 FUS[`FU_MUL] <= 32'b0;
                 RRS[FUS[`FU_MUL][`DST_H:`DST_L]] <= 3'b0;
 
@@ -571,7 +571,7 @@ module CtrlUnit(
             end
             // DIV
             //fill sth. here
-            else if(FUS[`FU_DIV][`FU_DONE] & DIV_WAR)begin
+            if(FUS[`FU_DIV][`FU_DONE] & DIV_WAR)begin
                 FUS[`FU_DIV] <= 32'b0;
                 RRS[FUS[`FU_DIV][`DST_H:`DST_L]] <= 3'b0;
 
@@ -715,7 +715,7 @@ module CtrlUnit(
             write_sel = 3'd4;
             reg_write = 1'b1;
             rd_ctrl = FUS[`FU_JUMP][`DST_H:`DST_L];
-        end
+        end 
         else if (FUS[`FU_ALU][`FU_DONE] & ALU_WAR) begin
             write_sel = 3'd0;
             reg_write = 1'b1;
